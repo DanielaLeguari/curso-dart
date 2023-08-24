@@ -1,2 +1,4 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# Curso 2: Dart - Entendendo a orientação a objetos
+
+# Paradigmas em programação
+<p> Todas as linguagens existem para resolver problemas, porém cada linguagem possuí um objetivo e estrutura específica</p>
