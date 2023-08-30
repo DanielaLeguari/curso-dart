@@ -9,9 +9,18 @@ void main() {
   print(isMadura);
 
   mostrarMadura(nome, 40, cor:"amarela");
+
+  print("${funcQuantosDiasmadura(diasDesdeColheita)} dias"); 
 }
+
+int funcQuantosDiasmadura( int dias){
+  int diasParaMadura = 30;
+  int quantosDiasFalta = diasParaMadura - dias;
+  return quantosDiasFalta;
+}
+
                                             //parametros nomeados opcionais {}
-void mostrarMadura(String nome, int dias, {required String? cor }) {
+void mostrarMadura(String nome, int dias, {required String cor }) {
   if (dias >= 30) {
     print("A $nome está madura");
   } else {
