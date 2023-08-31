@@ -57,3 +57,42 @@ class Fruta {
     print("A sua $nome foi colhida há $diasDesdeColheita dias, e precisa de $diasParaMadura para poder comer. Ela está madura? $isMadura.");
   }
 }
+
+class Alimento {
+  String nome;
+  double peso;
+  String cor;
+
+  Alimento(this.nome, this.peso, this.cor); 
+}
+
+class Legumes {
+  String nome;
+  double peso;
+  String cor;
+  bool isPrecisaCozinhar;
+
+  Legumes(this.nome, this.peso, this.cor, this.isPrecisaCozinhar);
+}
+
+class Citricas {
+  String nome;
+  double peso;
+  String cor;
+  int diasDesdeColheita;
+  bool? isMadura;
+  double nivelAzedo;
+
+  Citricas(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.nivelAzedo);
+}
+
+class Nozes {
+  String nome;
+  double peso;
+  String cor;
+  int diasDesdeColheita;
+  bool? isMadura;
+  double porcentagemDeOleoNatural;
+
+  Nozes(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.porcentagemDeOleoNatural);
+}
