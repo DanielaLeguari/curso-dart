@@ -39,22 +39,24 @@ void mostrarMadura(String nome, int dias, {required String cor }) {
   }
 }
 
-class Fruta {
+class Fruta extends Alimento {
 //propriedades -> caracteristicas do objeto
-  String nome;
-  double peso;
-  String cor;
+ 
   String sabor;
   int diasDesdeColheita;
   bool? isMadura;
 
 //construtor-> método especial
-  Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita, {this.isMadura});
+  Fruta(String nome, double peso, String cor, this.sabor, this.diasDesdeColheita, {this.isMadura}) : super(nome, peso, cor);
 
   //metodo
   void estaMadura(int diasParaMadura){
     isMadura = diasDesdeColheita >= diasParaMadura;
     print("A sua $nome foi colhida há $diasDesdeColheita dias, e precisa de $diasParaMadura para poder comer. Ela está madura? $isMadura.");
+  }
+
+  void fazerSuco(){
+    print("Você fez um ótimo suco de $nome");
   }
 }
 
@@ -64,35 +66,38 @@ class Alimento {
   String cor;
 
   Alimento(this.nome, this.peso, this.cor); 
+
+  void printAlimento(){
+    print("Est(a) $nome pesa $peso gramas e é $cor");
+  }
 }
 
-class Legumes {
-  String nome;
-  double peso;
-  String cor;
+class Legumes extends Alimento {
   bool isPrecisaCozinhar;
 
-  Legumes(this.nome, this.peso, this.cor, this.isPrecisaCozinhar);
+  Legumes(String nome, double peso, String cor, this.isPrecisaCozinhar) : super(nome, peso, cor);
+
+  void cozinhar(){
+    if(isPrecisaCozinhar){
+      print("Pronto, o $nome está cozinhando");
+    } else {
+      print("Nem precisa cozinhar!");
+    }
+  }
 }
 
-class Citricas {
-  String nome;
-  double peso;
-  String cor;
+class Citricas extends Alimento {
   int diasDesdeColheita;
   bool? isMadura;
   double nivelAzedo;
 
-  Citricas(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.nivelAzedo);
+  Citricas(String nome, double peso, String cor, this.diasDesdeColheita, this.nivelAzedo) : super(nome, peso, cor);
 }
 
-class Nozes {
-  String nome;
-  double peso;
-  String cor;
+class Nozes extends Alimento {
   int diasDesdeColheita;
   bool? isMadura;
   double porcentagemDeOleoNatural;
 
-  Nozes(this.nome, this.peso, this.cor, this.diasDesdeColheita, this.porcentagemDeOleoNatural);
+  Nozes(String nome, double peso, String cor, this.diasDesdeColheita, this.porcentagemDeOleoNatural) : super(nome, peso, cor);
 }
