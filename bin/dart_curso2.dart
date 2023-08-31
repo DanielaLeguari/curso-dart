@@ -4,13 +4,27 @@ void main() {
   String cor = "Verde e Amarela";
   String sabor = "Doce e cítrica";
   int diasDesdeColheita = 40;
-  bool isMadura = funcEstaMadura(diasDesdeColheita);
+  bool isMadura;
+                        //argumentos
+  Fruta fruta1 = Fruta(nome, peso, cor, sabor, diasDesdeColheita); // instancia
+  Fruta fruta2 = Fruta("Uva", 40, "roxo", "doce", 35);
 
-  print(isMadura);
+  print(fruta1.nome);
+  print(fruta2.nome);
+}
 
-  mostrarMadura(nome, 40, cor:"amarela");
+class Fruta {
 
-  print("${funcQuantosDiasmadura(diasDesdeColheita)} dias"); 
+//propriedades -> caracteristicas do objeto
+  String nome;
+  double peso;
+  String cor;
+  String sabor;
+  int diasDesdeColheita;
+  bool? isMadura;
+
+//construtor-> método especial
+  Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita, {this.isMadura});
 }
 
 int funcQuantosDiasmadura( int dias){
