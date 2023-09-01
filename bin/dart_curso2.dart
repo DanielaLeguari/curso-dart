@@ -11,6 +11,19 @@ void main() {
   } else {
     isMadura= false;
   }
+
+Legumes mandioca1 = Legumes('Macaxeita', 1200, 'marrom', true);
+Fruta banana1 = Fruta('Banana', 75, 'amarela', 'doce', 12);
+Nozes macadamia1 = Nozes('Macadamia', 2, 'branco amarelado', 'doce', 20, 35);
+Citricas limao1 = Citricas('Limão', 50, 'verde', 'azedo', 5, 9);
+
+mandioca1.printAlimento();
+banana1.printAlimento();
+mandioca1.printAlimento();
+limao1.printAlimento();
+
+mandioca1.cozinhar();
+
 }
 
 bool funcEstaMadura(int dias) {
@@ -86,18 +99,23 @@ class Legumes extends Alimento {
   }
 }
 
-class Citricas extends Alimento {
-  int diasDesdeColheita;
-  bool? isMadura;
+class Citricas extends Fruta {
   double nivelAzedo;
 
-  Citricas(String nome, double peso, String cor, this.diasDesdeColheita, this.nivelAzedo) : super(nome, peso, cor);
+  Citricas(String nome, double peso, String cor, String sabor, int diasDesdeColheita, this.nivelAzedo): super(nome, peso, cor, sabor, diasDesdeColheita) ;
+
+  void existeRefri(bool existe){
+    if(existe){
+      print("Existe refrigerante de $nome");
+    } else {
+      print("Não existe refri $nome");
+    }
+  }
 }
 
-class Nozes extends Alimento {
-  int diasDesdeColheita;
-  bool? isMadura;
+class Nozes extends Fruta {
+
   double porcentagemDeOleoNatural;
 
-  Nozes(String nome, double peso, String cor, this.diasDesdeColheita, this.porcentagemDeOleoNatural) : super(nome, peso, cor);
+  Nozes(String nome, double peso, String cor, String sabor, int diasDesdeColheita, this.porcentagemDeOleoNatural) : super(nome, peso, cor, sabor, diasDesdeColheita);
 }
