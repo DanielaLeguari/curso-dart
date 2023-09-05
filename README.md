@@ -8,3 +8,7 @@
 
 # Classes abstratas e polimorfismo
 <p>As classes abstratas envolve uma esfera conceitual, abstrato (conseguimos conceitualizar), por exemplo Fruta é um conceito abstrato.</p>
+
+## Polimorfismo
+
+<p>Notamos que nem sempre os métodos herdados podem ser úteis a todo momento. Em alguns casos, precisamos alterar esses métodos sem comprometer outras classes, e para isso usamos a Sobrescrita com o comando @override. O Polimorfismo nada mais é que a habilidade das nossas classes de alterar um método recebido por herança.</p>
