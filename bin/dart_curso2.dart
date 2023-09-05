@@ -24,6 +24,9 @@ limao1.printAlimento();
 
 mandioca1.cozinhar();
 
+banana1.separarIngredientes();
+macadamia1.fazerMassa();
+
 }
 
 bool funcEstaMadura(int dias) {
@@ -52,7 +55,7 @@ void mostrarMadura(String nome, int dias, {required String cor }) {
   }
 }
 
-class Fruta extends Alimento {
+class Fruta extends Alimento implements Bolo {
 //propriedades -> caracteristicas do objeto
  
   String sabor;
@@ -71,6 +74,22 @@ class Fruta extends Alimento {
   void fazerSuco(){
     print("Você fez um ótimo suco de $nome");
   }
+  
+    @override
+  void separarIngredientes() {
+    print("Colher a fruta");
+  }
+
+  @override
+  void fazerMassa() {
+    print("Misturar a fruta com farinha, açúcar, ovos e leite.");
+  }
+
+  @override
+  void assar() {
+    print("Levar ao forno");
+  }
+
 }
 
 class Alimento {
@@ -132,7 +151,14 @@ class Nozes extends Fruta {
 
   double porcentagemDeOleoNatural;
 
-  Nozes(String nome, double peso, String cor, String sabor, int diasDesdeColheita, this.porcentagemDeOleoNatural) : super(nome, peso, cor, sabor, diasDesdeColheita);
+  Nozes(String nome, double peso, String cor, String sabor, int diasDesdeColheita, this.porcentagemDeOleoNatural) 
+  : super(nome, peso, cor, sabor, diasDesdeColheita);
+
+  @override
+  void fazerMassa(){
+    print("Descascar as nozes");
+    super.fazerMassa();
+  }
 }
 
 abstract class Bolo {
